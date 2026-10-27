@@ -37,7 +37,7 @@
 :root {
   font-family: 'Manrope', Arial, sans-serif;
   color: #101010;
-  background: #e2e2e2;
+  background: #fff;
   font-synthesis: none;
   --maroon: #663540;
   --blush: #fcf2f5;
@@ -46,7 +46,7 @@
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 28px; }
-body { margin: 0; padding: 56px; font-size: 15px; line-height: 1.45; }
+body { margin: 0; padding: 0; font-size: 15px; line-height: 1.45; }
 button, input, a { -webkit-tap-highlight-color: transparent; }
 button, input { font: inherit; }
 button, a { touch-action: manipulation; }
@@ -57,7 +57,7 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 2px solid 
 img { max-width: 100%; display: block; }
 h1, h2, h3, p { margin: 0; }
 h1, h2, h3 { font-weight: 750; }
-.page-shell { max-width: 1392px; margin: 0 auto; padding: 18px; background: #fff; box-shadow: 0 0 5px #00000007; overflow: hidden; }
+.page-shell { width: 100%; margin: 0; padding: 0; background: #fff; overflow: hidden; }
 .inner { width: calc(100% - 148px); max-width: 1204px; margin-inline: auto; }
 .button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 46px; padding: 11px 29px; border-radius: 99px; font-size: 15px; font-weight: 500; white-space: nowrap; transition: background .25s, color .25s, box-shadow .25s, transform .25s; }
 .button:hover { transform: translateY(-2px); }
@@ -258,9 +258,7 @@ h2 { font-size: 52px; line-height: 1.15; letter-spacing: -2.1px; font-weight: 80
 .intro-steps h3 { margin-block: 9px; font-size: 16px; }
 .intro-steps p { font-size: 12px; color: #666; line-height: 1.5; }
 
-@media (min-width: 1505px) { body { padding: 56px max(56px, calc((100vw - 1392px)/2)); } }
 @media (max-width: 1430px) {
-  body { padding: 32px; }
   .inner { width: calc(100% - 100px); }
   .hero-main { grid-template-columns: 1.04fr 1fr; gap: 30px; }
   .hero-copy { padding-top: 8px; }
@@ -290,8 +288,6 @@ h2 { font-size: 52px; line-height: 1.15; letter-spacing: -2.1px; font-weight: 80
 }
 
 @media (max-width: 1100px) {
-  body { padding: 20px; }
-  .page-shell { padding: 13px; }
   .inner { width: calc(100% - 64px); }
   .header { gap: 20px; }
   .brand img { width: 155px; }
@@ -361,8 +357,6 @@ h2 { font-size: 52px; line-height: 1.15; letter-spacing: -2.1px; font-weight: 80
 }
 
 @media (max-width: 760px) {
-  body { padding: 12px; }
-  .page-shell { padding: 9px; }
   .inner { width: calc(100% - 40px); }
   .header { min-height: 82px; gap: 10px; }
   .brand img { width: 145px; }
