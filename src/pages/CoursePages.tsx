@@ -3,6 +3,8 @@ import { ArrowLeft, ArrowRight, BookOpen, Check, ChevronDown, Clock3, ListFilter
 import type { Course, Category } from '../data';
 import { courses, mentors } from '../data';
 import { asset, BottomCta, EmptyState, PageHero, PageReveal, SectionIntro } from '../components/site/PageShared';
+import { RegistrationModal } from '../components/site/RegistrationModal';
+import { useLearningState } from '../learning';
 import './course-pages.css';
 
 const courseCategories: Category[] = ['All Courses', 'UI/UX Design', 'Development', 'Marketing', 'Graphic Design'];
@@ -216,6 +218,10 @@ function Curriculum({ course }: { course: Course }) {
 
 export function CourseDetailPage({ course }: { course: Course }) {
   const [saved, setSaved] = useState(false);
+  const [registrationOpen, setRegistrationOpen] = useState(false);
+  const [saveError, setSaveError] = useState('');
+  const { state: learning, ready: learningReady } = useLearningState();
+  const registered = learning.enrollments.some(entry => entry.courseId === course.id);
   const relatedCourses = courses.filter(candidate => candidate.id !== course.id);
 
   useEffect(() => {
@@ -232,9 +238,10 @@ export function CourseDetailPage({ course }: { course: Course }) {
       const stored = JSON.parse(window.localStorage.getItem(savedCoursesKey) || '[]') as unknown;
       const ids = Array.isArray(stored) ? stored.filter((value): value is string => typeof value === 'string') : [];
       window.localStorage.setItem(savedCoursesKey, JSON.stringify([...new Set([...ids, course.id])]));
+      setSaveError('');
       setSaved(true);
     } catch {
-      setSaved(true);
+      setSaveError('Browser storage is unavailable. This course was not saved.');
     }
   };
 
@@ -306,10 +313,13 @@ export function CourseDetailPage({ course }: { course: Course }) {
                   <span><BookOpen size={17} aria-hidden="true" /><strong>{course.lessons}</strong> lessons</span>
                   <span><Clock3 size={17} aria-hidden="true" /><strong>{course.duration}</strong></span>
                 </div>
-                <button type="button" className="button primary course-detail-save" onClick={saveCourse} aria-pressed={saved}>
+                {registered ? <a className="button primary course-detail-register" href={`/dashboard?course=${course.id}`}>Continue in dashboard <ArrowRight size={17} /></a> : <button type="button" className="button primary course-detail-register" onClick={() => setRegistrationOpen(true)} disabled={!learningReady} aria-busy={!learningReady}>{learningReady ? 'Register for this course' : 'Checking enrollment…'} {learningReady && <ArrowRight size={17} />}</button>}
+                <button type="button" className="button outline course-detail-save" onClick={saveCourse} aria-pressed={saved}>
                   {saved ? <><Check size={17} aria-hidden="true" /> Saved to learning list</> : 'Save to my learning list'}
                 </button>
-                <p className="course-detail-disclosure">Saved only in this browser. Enrollment and payment backend are not connected, so this page does not process checkout.</p>
+                {saveError && <p className="course-detail-disclosure" role="alert">{saveError}</p>}
+                <p className="course-detail-disclosure">Demo registration and progress stay only in this browser. No payment, authenticated account or course access is provided.</p>
+                <a className="course-detail-dashboard-link" href="/dashboard">View student dashboard <ArrowRight size={15} /></a>
                 <a className="course-detail-back-link" href="/courses"><ArrowLeft size={16} aria-hidden="true" /> Back to all courses</a>
               </div>
             </aside>
@@ -327,6 +337,8 @@ export function CourseDetailPage({ course }: { course: Course }) {
           </section>
         </div>
       </section>
+
+      {registrationOpen && <RegistrationModal course={course} onClose={() => setRegistrationOpen(false)} onRegistered={() => setSaveError('')} />}
 
       <BottomCta
         title="A small step can change the shape of your week."

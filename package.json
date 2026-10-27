@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "vite --host 0.0.0.0 --port 3000",
     "build": "tsc --noEmit && vite build && node scripts/prerender.mjs",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test:learning": "node scripts/test-learning.mjs"
   },
   "dependencies": {
     "react": "^19.1.1",

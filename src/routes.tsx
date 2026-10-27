@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import { courses, faqs, mentors } from './data';
 import { articles } from './journal';
+import { DashboardPage } from './pages/DashboardPage';
 import { CoursesPage, CourseDetailPage } from './pages/CoursePages';
 import { AboutPage, InstructorDetailPage, InstructorsPage, mentorSlug, TestimonialsPage } from './pages/CommunityPages';
 import { ArticlePage, BlogPage, ContactPage, FaqPage, LegalPage, NotFoundPage } from './pages/InfoPages';
@@ -18,9 +19,10 @@ const fixedRoutes: RouteMetadata[] = [
   { path: '/contact', title: 'Contact Knowlect', description: 'Get in touch with Knowlect about courses, learning, and finding your next step.' },
   { path: '/blog', title: 'Learning Journal | Knowlect', description: 'Practical ideas for learning a skill, working with feedback, and showing your work.' },
   { path: '/faq', title: 'Frequently Asked Questions | Knowlect', description: 'Answers about Knowlect courses, learning at your own pace, certificates, and course access.' },
-  { path: '/privacy', title: 'Privacy Notice | Knowlect Demo', description: 'What the Knowlect website demonstration stores locally and which services are not connected.' },
-  { path: '/terms', title: 'Terms of Use | Knowlect Demo', description: 'How to use this Knowlect website demonstration and which learning and transaction features are not connected.' },
+  { path: '/privacy', title: 'Privacy Notice | Knowlect Demo', description: 'How your learner profile, local registrations, lesson checkmarks, and other browser-only demonstration data are stored.' },
+  { path: '/terms', title: 'Terms of Use | Knowlect Demo', description: 'How the browser-local registration and lesson progress demo works, and which payment, account, and course features are not connected.' },
   { path: '/404', title: 'Page Not Found | Knowlect', description: 'The requested Knowlect page could not be found.', robots: 'noindex,nofollow' },
+  { path: '/dashboard', title: 'Student Dashboard | Knowlect', description: 'Your browser-local learning space: track registered courses and self-reported lesson progress.', robots: 'noindex,nofollow' },
 ];
 
 function safeDecode(value: string) {
@@ -63,6 +65,7 @@ export function resolveRoute(path: string): ResolvedRoute {
   if (exact('/faq')) return { ...fixedRoutes[7], content: <FaqPage faqs={faqs} />, notFound: false };
   if (exact('/privacy')) return { ...fixedRoutes[8], content: <LegalPage kind="privacy" />, notFound: false };
   if (exact('/terms')) return { ...fixedRoutes[9], content: <LegalPage kind="terms" />, notFound: false };
+  if (exact('/dashboard')) return { ...fixedRoutes[11], content: <DashboardPage />, notFound: false };
   const courseMatch = normalized.match(/^\/courses\/([^/]+)$/);
   if (courseMatch) {
     const course = courses.find(item => item.id === safeDecode(courseMatch[1]));

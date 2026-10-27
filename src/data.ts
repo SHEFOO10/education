@@ -38,7 +38,7 @@ export const courses: Course[] = [
 export const steps = [
   { number: '01', title: 'Choose Your Course', image: 'journey-course', description: 'Browse courses and career pathways based on your interest from design to development and more.' },
   { number: '02', title: 'Get Mentor Guidance', image: 'journey-mentor', description: 'Connect with experienced instructors, ask questions, and receive feedback to improve your skills.' },
-  { number: '03', title: 'Earn Your Certificate', image: 'journey-certificate', description: 'Complete the course and receive a verified certificate to showcase your skills and boost your career.' },
+  { number: '03', title: 'Celebrate Your Progress', image: 'journey-certificate', description: 'Keep track of lesson checkmarks in your browser-only dashboard. Progress is self-reported; this demonstration does not issue certificates.' },
 ];
 
 export const mentors = [
@@ -60,7 +60,7 @@ export type Testimonial = (typeof testimonials)[number];
 export const faqs = [
   { question: 'What Type Of Courses Do You Offer?', answer: 'We Offer Skill-Based Courses Including UI/UX Design, Web Development, Digital Marketing, Graphic Design, Freelancing, And Soft Skills Training.' },
   { question: 'Are The Courses Beginner-Friendly?', answer: 'Yes! Our courses are designed to be approachable for beginners. You can start with the fundamentals and build your skills step by step, with guidance from experienced instructors.' },
-  { question: 'Will I Get A Certificate After Completing A Course?', answer: 'Yes. After completing your course, you’ll receive a certificate to showcase your new skills and celebrate your progress.' },
-  { question: 'How Long Do I Have Access To My Purchased Course?', answer: 'You can revisit your purchased course materials whenever you need a refresher, so you can keep learning and practicing at your own pace.' },
+  { question: 'Does This Demonstration Issue A Certificate?', answer: 'No. The dashboard lets you check off lessons as self-reported progress, but this demonstration does not verify course completion or issue a certificate.' },
+  { question: 'Do I Get Access To The Course Materials?', answer: 'No. Registration adds a course to the browser-local demo dashboard only. Course playback, purchased materials, and paid access are not connected.' },
   { question: 'Can I Learn At My Own Pace?', answer: 'Absolutely. Our self-paced lessons fit around your schedule. Pause, replay, and return to your course when it works best for you.' },
 ];

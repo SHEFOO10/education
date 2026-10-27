@@ -1,0 +1,52 @@
+.registration-modal { padding: 0; width: min(960px, calc(100vw - 36px)); max-width: none; max-height: calc(100dvh - 48px); border: 0; border-radius: 28px; background: #fff; color: #191416; box-shadow: 0 30px 120px #24111a40; overflow-y: auto; }
+.registration-modal::backdrop { background: #24111b80; backdrop-filter: blur(5px); }
+.registration-modal .registration-close { position: absolute; right: 18px; top: 18px; width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; z-index: 1; background: #fff; color: var(--maroon); box-shadow: 0 2px 12px #00000008; }
+.registration-modal .registration-close:hover { background: #f2e6eb; }
+.registration-modal .registration-layout { display: grid; grid-template-columns: 0.86fr 1.14fr; }
+.registration-modal .registration-summary { padding: 42px 32px; background: var(--blush); }
+.registration-modal .eyebrow { color: var(--maroon); font-size: 11px; letter-spacing: 1.25px; }
+.registration-modal .registration-summary > img { border-radius: 17px; width: 100%; aspect-ratio: 1.85; object-fit: cover; margin-top: 24px; }
+.registration-modal .registration-category { display: inline-block; font-size: 11px; color: var(--maroon); margin-top: 23px; }
+.registration-modal .registration-summary h2 { font-size: 28px; line-height: 1.18; letter-spacing: -1px; margin-top: 8px; }
+.registration-modal .registration-facts { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 18px; font-size: 12px; color: #61535a; }
+.registration-modal .registration-facts span { display: flex; gap: 7px; align-items: center; }
+.registration-modal .registration-summary ul { padding: 22px 0; margin: 0; list-style: none; border-bottom: 1px solid #e3d6db; }
+.registration-modal .registration-summary li { display: flex; gap: 10px; font-size: 12px; color: #61535a; line-height: 1.5; margin-block: 12px; }
+.registration-modal .registration-summary li svg { color: var(--maroon); flex-shrink: 0; }
+.registration-modal .registration-price { display: flex; justify-content: space-between; align-items: center; font-size: 12px; margin-top: 20px; }
+.registration-modal .registration-price strong { font-size: 18px; }
+.registration-modal .registration-demo-total { font-weight: 650; color: var(--maroon); margin-top: 12px; }
+.registration-modal .registration-demo-total strong { font-size: 26px; }
+.registration-modal .registration-summary > p:last-child { font-size: 11px; color: #6d5c64; line-height: 1.6; margin-top: 16px; }
+.registration-modal .registration-content { padding: 55px 45px 32px; display: flex; flex-direction: column; }
+.registration-modal .registration-content h2 { font-size: 38px; line-height: 1.08; letter-spacing: -1.5px; margin-top: 16px; }
+.registration-modal .registration-intro { color: var(--muted); font-size: 14px; margin-top: 17px; line-height: 1.6; }
+.registration-modal .registration-form { margin-top: 29px; }
+.registration-modal .registration-form > label:not(.registration-consent) { font-size: 13px; font-weight: 650; display: block; margin-bottom: 19px; }
+.registration-modal .registration-form input:not([type=checkbox]) { display: block; width: 100%; margin-top: 9px; border: 1px solid #ddd3d7; border-radius: 11px; background: #fff; padding: 13px 15px; color: #24141b; font: inherit; font-weight: 450; min-height: 47px; }
+.registration-modal .registration-form input:focus { border-color: var(--maroon); }
+.registration-modal .registration-consent { display: flex; gap: 10px; font-size: 11px; color: #665960; line-height: 1.6; margin: 8px 0 24px; }
+.registration-modal .registration-consent input { accent-color: var(--maroon); flex-shrink: 0; width: 16px; height: 16px; margin: 3px 0 0; }
+.registration-modal .registration-consent a { text-decoration: underline; text-underline-offset: 3px; }
+.registration-modal .registration-form .button { width: 100%; }
+.registration-modal .registration-error { color: #9a273c; background: #fff0f3; border-radius: 9px; padding: 12px; margin-bottom: 16px; font-size: 12px; }
+.registration-modal .registration-storage-note { display: flex; align-items: flex-start; gap: 9px; font-size: 10px; color: #7a6f74; line-height: 1.65; margin-top: auto; padding-top: 24px; }
+.registration-modal .registration-storage-note svg { color: var(--maroon); flex-shrink: 0; margin-top: 2px; }
+.registration-modal .registration-success { padding-block: 24px; }
+.registration-modal .registration-success-icon { display: grid; place-items: center; width: 67px; height: 67px; border-radius: 50%; background: #e9f1d8; color: #526829; margin-bottom: 28px; }
+.registration-modal .registration-success > p:not(.eyebrow) { color: var(--muted); line-height: 1.75; font-size: 14px; margin: 20px 0 28px; }
+.registration-modal .registration-success h2:focus { outline: none; }
+.registration-modal .registration-text-link { display: block; font-size: 12px; text-decoration: underline; text-underline-offset: 4px; margin-top: 22px; color: var(--maroon); }
+@media (max-width: 760px) {
+  .registration-modal { width: calc(100vw - 22px); max-height: calc(100dvh - 26px); border-radius: 20px; }
+  .registration-modal .registration-layout { display: flex; flex-direction: column; }
+  .registration-modal .registration-summary { padding: 28px 25px; }
+  .registration-modal .registration-summary > img, .registration-modal .registration-summary ul, .registration-modal .registration-summary > p:last-child { display: none; }
+  .registration-modal .registration-summary h2 { font-size: 24px; }
+  .registration-modal .registration-category { margin-top: 14px; }
+  .registration-modal .registration-price { margin-top: 14px; }
+  .registration-modal .registration-content { padding: 28px 25px; }
+  .registration-modal .registration-content h2 { font-size: 32px; }
+  .registration-modal .registration-form .button { min-height: 46px; }
+  .registration-modal .registration-storage-note { font-size: 11px; }
+}

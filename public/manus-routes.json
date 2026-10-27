@@ -1,1 +1,104 @@
-{"routes":[{"path":"/","title":"Knowlect — Home"},{"path":"/courses","title":"Courses"},{"path":"/courses/:courseSlug","title":"Course detail"},{"path":"/courses/python","title":"Python Programming Course"},{"path":"/courses/marketing","title":"Digital Marketing Course"},{"path":"/courses/design","title":"UI/UX Design Course"},{"path":"/courses/analytics","title":"Graphic Design & Branding Course"},{"path":"/about","title":"About Knowlect"},{"path":"/testimonials","title":"Learner stories"},{"path":"/instructors","title":"Instructors"},{"path":"/instructors/:mentorSlug","title":"Instructor profile"},{"path":"/instructors/ayaan-rahman","title":"Ayaan Rahman"},{"path":"/instructors/kristin-watson","title":"Kristin Watson"},{"path":"/instructors/floyd-miles","title":"Floyd Miles"},{"path":"/instructors/sara-hossain","title":"Sara Hossain"},{"path":"/contact","title":"Contact"},{"path":"/blog","title":"Learning journal"},{"path":"/blog/:articleSlug","title":"Journal article"},{"path":"/blog/build-a-learning-habit","title":"A little practice, a little more often"},{"path":"/blog/make-mentor-feedback-useful","title":"Ask better questions. Make better progress"},{"path":"/blog/first-portfolio-project","title":"Your first project deserves a place in your portfolio"},{"path":"/faq","title":"Frequently asked questions"},{"path":"/privacy","title":"Privacy notice"},{"path":"/terms","title":"Terms of use"}]}
+{
+  "routes": [
+    {
+      "path": "/",
+      "title": "Knowlect \u2014 Home"
+    },
+    {
+      "path": "/courses",
+      "title": "Courses"
+    },
+    {
+      "path": "/courses/:courseSlug",
+      "title": "Course detail"
+    },
+    {
+      "path": "/courses/python",
+      "title": "Python Programming Course"
+    },
+    {
+      "path": "/courses/marketing",
+      "title": "Digital Marketing Course"
+    },
+    {
+      "path": "/courses/design",
+      "title": "UI/UX Design Course"
+    },
+    {
+      "path": "/courses/analytics",
+      "title": "Graphic Design & Branding Course"
+    },
+    {
+      "path": "/about",
+      "title": "About Knowlect"
+    },
+    {
+      "path": "/testimonials",
+      "title": "Learner stories"
+    },
+    {
+      "path": "/instructors",
+      "title": "Instructors"
+    },
+    {
+      "path": "/instructors/:mentorSlug",
+      "title": "Instructor profile"
+    },
+    {
+      "path": "/instructors/ayaan-rahman",
+      "title": "Ayaan Rahman"
+    },
+    {
+      "path": "/instructors/kristin-watson",
+      "title": "Kristin Watson"
+    },
+    {
+      "path": "/instructors/floyd-miles",
+      "title": "Floyd Miles"
+    },
+    {
+      "path": "/instructors/sara-hossain",
+      "title": "Sara Hossain"
+    },
+    {
+      "path": "/contact",
+      "title": "Contact"
+    },
+    {
+      "path": "/blog",
+      "title": "Learning journal"
+    },
+    {
+      "path": "/blog/:articleSlug",
+      "title": "Journal article"
+    },
+    {
+      "path": "/blog/build-a-learning-habit",
+      "title": "A little practice, a little more often"
+    },
+    {
+      "path": "/blog/make-mentor-feedback-useful",
+      "title": "Ask better questions. Make better progress"
+    },
+    {
+      "path": "/blog/first-portfolio-project",
+      "title": "Your first project deserves a place in your portfolio"
+    },
+    {
+      "path": "/faq",
+      "title": "Frequently asked questions"
+    },
+    {
+      "path": "/privacy",
+      "title": "Privacy notice"
+    },
+    {
+      "path": "/terms",
+      "title": "Terms of use"
+    },
+    {
+      "path": "/dashboard",
+      "title": "Student dashboard"
+    }
+  ]
+}
